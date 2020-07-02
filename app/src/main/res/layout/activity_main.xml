@@ -1,18 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/play_idx"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                />
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/btn_record"
+                    android:padding="20dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:background="@drawable/rounded_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RECORD"
+                />
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/btn_stop"
+                    android:padding="20dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:background="@drawable/rounded_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="STOP"
+                    />
+
+                <TextView
+                    android:id="@+id/record_timer"
+                    android:visibility="gone"
+                    android:padding="20dp"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="23:42"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:visibility="gone"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/btn_pause"
+                android:padding="20dp"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:background="@drawable/rounded_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PAUSE"
+                android:layout_marginBottom="20dp"
+                />
+        </LinearLayout>
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/btn_play"
+            android:padding="20dp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PLAY"
+            />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="20dp"
+        android:id="@+id/play_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>
